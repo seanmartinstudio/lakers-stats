@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+  const[players, setPlayers] = useState(null)
+ 
+  useEffect(() => {
+    axios.get('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237&postseason=true', {
+      // params: {
+      //   ID: 12345
+      // }
+    })
+    .then(function (response) {
+      console.log(response.data.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<h1>Hello World!</h1>
   );
 }
 
