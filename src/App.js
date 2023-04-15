@@ -23,8 +23,12 @@ function App() {
   console.log("Player", player)
   console.log("Stats", stats)
 
+
+
   return (
-<h1>Hello World!</h1>
+<ul>
+     <li>{player.first_name} {player.last_name}</li>
+</ul>
   )
 }
 
