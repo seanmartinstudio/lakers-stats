@@ -3,25 +3,30 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
-  const[players, setPlayers] = useState(null)
+  const[player, setPlayer] = useState([])
+  const[stats, setStats] = useState([])
  
   useEffect(() => {
-    axios.get('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237&postseason=true', {
-      // params: {
-      //   ID: 12345
-      // }
-    })
-    .then(function (response) {
-      console.log(response.data.data);
-    })
-    .catch(function (error) {
-      console.log(error);
+    Promise.all([
+      fetch('https://www.balldontlie.io/api/v1/players/237'),
+      fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237&postseason=true'),
+    ])
+    .then(([resPlayer, resStats]) => 
+        Promise.all([resPlayer.json(), resStats.json()])
+      )
+    .then(([dataPlayer, dataStats]) => {
+      setPlayer(dataPlayer)
+      setStats(dataStats)
     })
   },[])
 
+  console.log("Player", player)
+  console.log("Stats", stats)
+
   return (
 <h1>Hello World!</h1>
-  );
+  )
 }
+
 
 export default App;
