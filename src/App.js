@@ -5,6 +5,7 @@ import Container from './Container';
 function App() {
   const[profile, setProfile] = useState([])
   const[stats, setStats] = useState([])
+  const[team, setTeam] = useState([])
  
   useEffect(() => {
     Promise.all([
@@ -17,17 +18,19 @@ function App() {
     .then(([dataProfile, dataStats]) => {
       setProfile(dataProfile)
       setStats(dataStats.data[0])
+      setTeam(dataProfile.team)
     })
   },[])
 
-  console.log("Profile", profile)
-  console.log("Stats", stats)
+  console.log("Profile ->", profile)
+  console.log("Stats ->", stats)
+  console.log("Team ->", team)
 
 
 
   return (
   <div>
-    <Container profile={profile} stats={stats} />
+    <Container profile={profile} stats={stats} team={team} />
   </div>
   )
 }

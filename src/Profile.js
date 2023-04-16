@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Profile = ( {profile} ) => {
-    const {first_name, last_name, position, height_feet, height_inces, weight_pounds, team} = profile
+const Profile = ( {profile, team} ) => {
+    const {first_name, last_name, position, height_feet, height_inces, weight_pounds} = profile
+    const {full_name} = team
   return (
-    <div>{first_name}</div>
+    <div>{full_name}</div>
   )
 }
 
