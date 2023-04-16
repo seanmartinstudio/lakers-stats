@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Container from './Container';
 
 function App() {
-  const[player, setPlayer] = useState([])
+  const[profile, setProfile] = useState([])
   const[stats, setStats] = useState([])
  
   useEffect(() => {
@@ -11,23 +11,23 @@ function App() {
       fetch('https://www.balldontlie.io/api/v1/players/237'),
       fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237&postseason=true'),
     ])
-    .then(([resPlayer, resStats]) => 
-        Promise.all([resPlayer.json(), resStats.json()])
+    .then(([resProfile, resStats]) => 
+        Promise.all([resProfile.json(), resStats.json()])
       )
-    .then(([dataPlayer, dataStats]) => {
-      setPlayer(dataPlayer)
+    .then(([dataProfile, dataStats]) => {
+      setProfile(dataProfile)
       setStats(dataStats)
     })
   },[])
 
-  console.log("Player", player)
+  console.log("Player", profile)
   console.log("Stats", stats)
 
 
 
   return (
   <div>
-    <Container/>
+    <Container />
   </div>
   )
 }
