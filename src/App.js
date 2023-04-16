@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import Container from './Container';
 
 function App() {
   const[player, setPlayer] = useState([])
@@ -26,9 +26,9 @@ function App() {
 
 
   return (
-<ul>
-     <li>{player.first_name} {player.last_name}</li>
-</ul>
+  <div>
+    <Container/>
+  </div>
   )
 }
 
