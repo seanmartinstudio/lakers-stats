@@ -16,18 +16,18 @@ function App() {
       )
     .then(([dataProfile, dataStats]) => {
       setProfile(dataProfile)
-      setStats(dataStats)
+      setStats(dataStats.data[0])
     })
   },[])
 
-  console.log("Player", profile)
+  console.log("Profile", profile)
   console.log("Stats", stats)
 
 
 
   return (
   <div>
-    <Container />
+    <Container profile={profile} stats={stats} />
   </div>
   )
 }

@@ -1,8 +1,13 @@
 import React from 'react'
+import Profile from './Profile'
+import Stats from './Stats'
 
-const Container = () => {
+const Container = ( {profile, stats}) => {
   return (
-    <div>Container</div>
+    <div>
+      <Profile profile={profile}/>
+      <Stats stats={stats}/>
+    </div>
   )
 }
 
