@@ -6,6 +6,8 @@ function App() {
   const[profile, setProfile] = useState([])
   const[stats, setStats] = useState([])
   const[team, setTeam] = useState([])
+  let playerForEndPoint = "LeBron_James"
+
 
   const lakersRoster = [
     "Shaquille_Harrison", "D'Angelo_Russell", "Jarred_Vanderbilt", "Anthony_Davis", "Lonnie_Walker_IV",
@@ -13,8 +15,10 @@ function App() {
     "Scotty_Pippen_Jr.", "Austin_Reaves", "Dennis_Schroder", "Cole_Swider", "Rui_Hachimura", "Wenyen_Gabriel"
   ]
 
-  const randomIndex = Math.floor(Math.random() * lakersRoster.length)
-  const playerForEndPoint = lakersRoster[randomIndex]
+  const handleRandomPlayer = (() => {
+    const randomIndex = Math.floor(Math.random() * lakersRoster.length)
+    playerForEndPoint = lakersRoster[randomIndex]
+  })
 
   useEffect(() => {
     Promise.all([
@@ -38,6 +42,7 @@ function App() {
   return (
   <div>
     <Container profile={profile} stats={stats} team={team} />
+    <button onClick={handleRandomPlayer}>Click Me!</button>
   </div>
   )
 }
