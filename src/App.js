@@ -6,10 +6,19 @@ function App() {
   const[profile, setProfile] = useState([])
   const[stats, setStats] = useState([])
   const[team, setTeam] = useState([])
- 
+
+  const lakersRoster = [
+    "Shaquille_Harrison", "D'Angelo_Russell", "Jarred_Vanderbilt", "Anthony_Davis", "Lonnie_Walker_IV",
+    "Malik_Beasley", "LeBron_James", "Troy_Brown_Jr.", "Tristan_Thompson", "Max_Christie", "Mo_Bamba",
+    "Scotty_Pippen_Jr.", "Austin_Reaves", "Dennis_Schroder", "Cole_Swider", "Rui_Hachimura", "Wenyen_Gabriel"
+  ]
+
+  const randomIndex = Math.floor(Math.random() * lakersRoster.length)
+  const playerForEndPoint = lakersRoster[randomIndex]
+
   useEffect(() => {
     Promise.all([
-      fetch('https://www.balldontlie.io/api/v1/players?search=rui_hachimura'),
+      fetch(`https://www.balldontlie.io/api/v1/players?search=${playerForEndPoint}`),
       fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237'),
     ])
     .then(([resProfile, resStats]) => 

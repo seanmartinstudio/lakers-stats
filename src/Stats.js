@@ -30,7 +30,7 @@ const Stats = ( {stats} ) => {
     <th>pf</th>
   </tr>
   <tr>
-    <td>{season}</td>
+    <td>{season}-2023</td>
     <td>{games_played}</td>
     <td>{min}</td>
     <td>{pts}</td>
