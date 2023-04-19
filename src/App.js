@@ -15,6 +15,7 @@ function App() {
     "Scotty_Pippen_Jr.", "Austin_Reaves", "Dennis_Schroder", "Cole_Swider", "Rui_Hachimura", "Wenyen_Gabriel"
   ]
 
+  //Maybe this needs to be moved inside of the useEffect hook?
   const handleRandomPlayer = (() => {
     const randomIndex = Math.floor(Math.random() * lakersRoster.length)
     playerForEndPoint = lakersRoster[randomIndex]
