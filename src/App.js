@@ -9,24 +9,22 @@ function App() {
  
   useEffect(() => {
     Promise.all([
-      fetch('https://www.balldontlie.io/api/v1/players/237'),
-      fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237&postseason=true'),
+      fetch('https://www.balldontlie.io/api/v1/players?search=rui_hachimura'),
+      fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237'),
     ])
     .then(([resProfile, resStats]) => 
         Promise.all([resProfile.json(), resStats.json()])
       )
     .then(([dataProfile, dataStats]) => {
-      setProfile(dataProfile)
+      setProfile(dataProfile.data[0])
       setStats(dataStats.data[0])
-      setTeam(dataProfile.team)
+      setTeam(dataProfile.data[0].team)
     })
   },[])
 
   console.log("Profile ->", profile)
   console.log("Stats ->", stats)
   console.log("Team ->", team)
-
-
 
   return (
   <div>
