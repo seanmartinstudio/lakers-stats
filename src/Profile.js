@@ -6,11 +6,13 @@ const Profile = ( {profile, team} ) => {
 
   return (
     <div className='profile'>
-        <p>{first_name} {last_name}</p>
-        <p>{full_name}</p>
-        <p>Height: {height_feet}' {height_inches}"</p>
-        <p>Weight: {weight_pounds}lb.</p>
-        <p>Position: {position}</p>
+        <h1>{first_name} {last_name}</h1>
+        <ul>
+        <li>{full_name}</li>
+        <li>Height: {height_feet}' {height_inches}"</li>
+        <li>Weight: {weight_pounds}lb.</li>
+        <li>Position: {position}</li>
+        </ul>
     </div>
   )
 }
