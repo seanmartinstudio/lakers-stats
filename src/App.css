@@ -1,23 +1,29 @@
+
+
 .App {
   text-align: center;
 }
-/* 
+
 body {
-  background-image: url('/public/4mtg.gif');
+  background-image: url('/public/Magic.png');
   background-repeat: no-repeat;
   background-size: cover;
-} */
+  padding-top: 1.5em;
+}
 
 form {
   text-align: center;
   padding-top: 1.5rem;
 }
 
-
+select {
+  color: black
+}
 
 * {
   font-family: 'MyFont', sans-serif;
   text-transform: uppercase;
+  color: white;
 }
 
 
@@ -44,6 +50,8 @@ table {
   font-weight: bolder;
   font-size: larger;
 }
+
+
 
 
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import 'animate.css';
 
 const Profile = ( {profile, team} ) => {
     const {first_name, last_name, position, height_feet, height_inches, weight_pounds} = profile
@@ -6,7 +7,7 @@ const Profile = ( {profile, team} ) => {
 
   return (
     <div className='profile'>
-        <h1>{first_name} {last_name}</h1>
+        <h1 key={first_name} class="animate__animated animate__bounce">{first_name} {last_name}</h1>
         <ul>
         <li>{full_name}</li>
         <li>Height: {height_feet}' {height_inches}"</li>
