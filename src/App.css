@@ -1,17 +1,25 @@
 .App {
   text-align: center;
 }
-
-/* body {
-  background-image: url('/public/giphy.gif');
+/* 
+body {
+  background-image: url('/public/4mtg.gif');
   background-repeat: no-repeat;
   background-size: cover;
 } */
+
+form {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+
 
 * {
   font-family: 'MyFont', sans-serif;
   text-transform: uppercase;
 }
+
 
 @font-face {
   font-family: 'MyFont';
