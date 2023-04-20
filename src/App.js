@@ -7,36 +7,17 @@ function App() {
   const [profile, setProfile] = useState([])
   const [stats, setStats] = useState([])
   const [team, setTeam] = useState([])
-  // const [playerId, setPlayerId] = useState([])
   const [selectedPlayer, setSelectedPlayer] = useState('Shaquille Harrison')
 
   const handleSelectedPlayer = ((event) => setSelectedPlayer(event.target.value))
 
-  // useEffect(() => {
-  //   Promise.all([
-  //     fetch(`https://www.balldontlie.io/api/v1/players?search=${selectedPlayer}`),
-  //     fetch('https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237'),
-  //   ])
-  //   .then(([resProfile, resStats]) => 
-  //       Promise.all([resProfile.json(), resStats.json()])
-  //     )
-  //   .then(([dataProfile, dataStats]) => {
-  //     setPlayerId(dataProfile.data[0].id)
-  //     setProfile(dataProfile.data[0])
-  //     setStats(dataStats.data[0])
-  //     setTeam(dataProfile.data[0].team)
-  //   })
-  // },[selectedPlayer])
-
   useEffect(() => {
-
     axios.get(`https://www.balldontlie.io/api/v1/players?search=${selectedPlayer}`)
     .then(resProfile => {
-      // setPlayerId(resProfile.data.data[0].id)
       setProfile(resProfile.data.data[0])
       setTeam(resProfile.data.data[0].team)
-      let pId = resProfile.data.data[0].id
-      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${pId}`)
+      let playerId = resProfile.data.data[0].id
+      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerId}`)
     })
     .then(resStats => {
       setStats(resStats.data.data[0])
@@ -44,14 +25,6 @@ function App() {
     .catch(error => {
       console.error(error);
     })
-    
-
-    // .then(([dataProfile, dataStats]) => {
-    //   setPlayerId(dataProfile.data[0].id)
-    //   setProfile(dataProfile.data[0])
-    //   setStats(dataStats.data[0])
-    //   setTeam(dataProfile.data[0].team)
-    // })
   },[selectedPlayer])
 
   // console.log("Profile ->", profile)
