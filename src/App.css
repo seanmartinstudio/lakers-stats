@@ -21,11 +21,10 @@ select {
 }
 
 * {
-  font-family: 'MyFont', sans-serif;
+  font-family: 'MyFont', helvetica, sans-serif;
   text-transform: uppercase;
   color: white;
 }
-
 
 @font-face {
   font-family: 'MyFont';
@@ -38,7 +37,7 @@ ul, li{
   padding: 0;
 }
 
-table {
+table, p {
   text-align: center;
   margin: 0 auto;
   padding-top: 1.5em;

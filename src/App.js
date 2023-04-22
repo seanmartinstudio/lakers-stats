@@ -8,6 +8,7 @@ function App() {
   const [profile, setProfile] = useState([])
   const [stats, setStats] = useState([])
   const [team, setTeam] = useState([])
+  const [noStatsAvail, setNoStatsAvail] = useState(false)
   const [selectedPlayer, setSelectedPlayer] = useState('Shaquille Harrison')
 
   const handleSelectedPlayer = ((event) => setSelectedPlayer(event.target.value))
@@ -21,21 +22,30 @@ function App() {
       return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerId}`)
     })
     .then(resStats => {
-      setStats(resStats.data.data[0])
+      if(resStats.data.data[0] === undefined) {
+        setStats([])
+        setNoStatsAvail(true)
+      } else {
+        setStats(resStats.data.data[0])
+      }
     })
     .catch(error => {
       console.error(error);
     })
   },[selectedPlayer])
 
-  // console.log("Profile ->", profile)
-  // console.log("Stats ->", stats)
-  // console.log("Team ->", team)
-  // console.log("Player ID ->", playerId)
+  console.log("Profile ->", profile)
+  console.log("Stats ->", stats)
+  console.log("Team ->", team)
+  console.log("Stats Not Avail", noStatsAvail)
 
   return (
   <div>
     <Container profile={profile} stats={stats} team={team} />
+    {noStatsAvail
+        ? <p>No stats available for this player</p>
+        : null
+      }
     <Form handleSelectedPlayer={handleSelectedPlayer}/>
   </div>
   )
