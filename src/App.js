@@ -42,7 +42,7 @@ function App() {
 
   return (
   <div>
-    <Container profile={profile} stats={stats} team={team} />
+    <Container profile={profile} stats={stats} team={team} noStatsAvail={noStatsAvail}/>
     {noStatsAvail
         ? <p>No stats available for this player</p>
         : null

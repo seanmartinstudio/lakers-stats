@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Stats = ( {stats} ) => {
+const Stats = ( {stats, noStatsAvail} ) => {
     const {games_played, player_id, season, min, fgm, fga, fg3m, fg3a, ftm, fta, oreb, dreb, reb, ast, stl, blk, turnover, pf, pts, fg_pct, fg3_pct, ft_pct} = stats
 
   return (
@@ -30,7 +30,12 @@ const Stats = ( {stats} ) => {
     <th>pf</th>
   </tr>
   <tr>
-    <td>{season}-2023</td>
+    <td>{season}
+    {noStatsAvail
+        ? null
+        : "-2023"
+      }
+   </td>
     <td>{games_played}</td>
     <td>{min}</td>
     <td>{pts}</td>
