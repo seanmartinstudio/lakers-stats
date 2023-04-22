@@ -27,6 +27,7 @@ function App() {
         setNoStatsAvail(true)
       } else {
         setStats(resStats.data.data[0])
+        setNoStatsAvail(false)
       }
     })
     .catch(error => {
