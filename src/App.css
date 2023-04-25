@@ -2,13 +2,26 @@
 
 .App {
   text-align: center;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 body {
   background-image: url('/public/Magic.png');
-  background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 1.5em;
+  /* background-position: center center;  */
+}
+
+@media only screen and (max-width: 767px) {
+  /* Apply padding to table children on mobile devices */
+  table td, table th {
+    padding: 10px;
+  }
+}
+
+th {
+  white-space: nowrap;
 }
 
 form {
@@ -37,10 +50,24 @@ ul, li{
   padding: 0;
 }
 
-table, p {
+p {
   text-align: center;
   margin: 0 auto;
   padding-top: 1.5em;
+}
+
+table {
+  backdrop-filter: blur(3px);
+  width: 95%;
+  border-collapse: collapse;
+  text-align: center; /* add this line */
+}
+
+.table-wrapper {
+  align-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
 }
 
 
