@@ -52,7 +52,7 @@ function App() {
   )
 }
 
-//array of players as of 4/25/2023
+//array of players as of 4/20/2023
 // const lakersRoster = [
 //   "Shaquille_Harrison", "D'Angelo_Russell", "Jarred_Vanderbilt", "Anthony_Davis", "Lonnie_Walker_IV",
 //   "Malik_Beasley", "LeBron_James", "Troy_Brown_Jr.", "Tristan_Thompson", "Max_Christie", "Mo_Bamba",
