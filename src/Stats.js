@@ -7,7 +7,7 @@ const Stats = ( {stats, noStatsAvail} ) => {
     <div>
       <table>
   <tr>
-    <th>season</th>
+    <th>reg season</th>
     <th>gp</th>
     <th>min</th>
     <th>pts</th>

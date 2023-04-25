@@ -19,7 +19,7 @@ function App() {
       setProfile(resProfile.data.data[0])
       setTeam(resProfile.data.data[0].team)
       let playerId = resProfile.data.data[0].id
-      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerId}&postseason=true`)
+      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
     })
     .then(resStats => {
       if(resStats.data.data[0] === undefined) {
