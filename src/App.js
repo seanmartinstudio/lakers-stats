@@ -19,7 +19,7 @@ function App() {
       setProfile(resProfile.data.data[0])
       setTeam(resProfile.data.data[0].team)
       let playerId = resProfile.data.data[0].id
-      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerId}`)
+      return axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerId}&postseason=true`)
     })
     .then(resStats => {
       if(resStats.data.data[0] === undefined) {
@@ -52,7 +52,7 @@ function App() {
   )
 }
 
-//array of players as of 4/20/2023
+//array of players as of 4/25/2023
 // const lakersRoster = [
 //   "Shaquille_Harrison", "D'Angelo_Russell", "Jarred_Vanderbilt", "Anthony_Davis", "Lonnie_Walker_IV",
 //   "Malik_Beasley", "LeBron_James", "Troy_Brown_Jr.", "Tristan_Thompson", "Max_Christie", "Mo_Bamba",
