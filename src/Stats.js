@@ -5,7 +5,7 @@ const Stats = ( {stats, noStatsAvail} ) => {
 
     // Number of games played from API is off by +1, this fixes that without a NAN being rendered to UI
     let correctGP = []
-    if(games_played != undefined) {
+    if(games_played !== undefined) {
       correctGP = games_played - 1
     }
     
