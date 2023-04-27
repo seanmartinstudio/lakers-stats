@@ -3,6 +3,9 @@ import React from 'react'
 const Stats = ( {stats, noStatsAvail} ) => {
     const {games_played, season, min, fgm, fga, fg3m, fg3a, ftm, fta, oreb, dreb, reb, ast, stl, blk, turnover, pf, pts, fg_pct, fg3_pct, ft_pct} = stats
 
+    // Number of games played from API is off by +1, this fixes that
+    let correctGP = games_played - 1
+
   return (
     <div className='table-wrapper'>
       <table>
@@ -36,7 +39,7 @@ const Stats = ( {stats, noStatsAvail} ) => {
         : "-2023"
       }
    </td>
-    <td>{games_played}</td>
+    <td>{correctGP}</td>
     <td>{min}</td>
     <td>{pts}</td>
     <td>{fgm}</td>

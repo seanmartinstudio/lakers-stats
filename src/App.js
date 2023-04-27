@@ -35,10 +35,10 @@ function App() {
     })
   },[selectedPlayer])
 
-  console.log("Profile ->", profile)
-  console.log("Stats ->", stats)
-  console.log("Team ->", team)
-  console.log("Stats Not Avail", noStatsAvail)
+  // console.log("Profile ->", profile)
+  // console.log("Stats ->", stats)
+  // console.log("Team ->", team)
+  // console.log("Stats Not Avail", noStatsAvail)
 
   return (
   <div>
