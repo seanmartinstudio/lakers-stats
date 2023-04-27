@@ -7,16 +7,28 @@
   padding: 20px;
 }
 
+img {
+  display: block; 
+  margin: 0 auto;
+  width: 50%; 
+  height: 50%;
+}
+
+
 body {
-  background-image: url('/public/Magic.png');
-  background-size: cover;
-  /* background-position: center center;  */
+  background-color: black;
 }
 
 @media only screen and (max-width: 767px) {
   /* Apply padding to table children on mobile devices */
   table td, table th {
     padding: 10px;
+  }
+  img {
+    display: block; 
+    margin: 0 auto;
+    width: 75%; 
+    height: 75%;
   }
 }
 
@@ -26,7 +38,7 @@ th {
 
 form {
   text-align: center;
-  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 select {
@@ -60,7 +72,7 @@ table {
   backdrop-filter: blur(3px);
   width: 95%;
   border-collapse: collapse;
-  text-align: center; /* add this line */
+  text-align: center;
 }
 
 .table-wrapper {

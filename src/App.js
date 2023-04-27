@@ -48,6 +48,7 @@ function App() {
         : null
       }
     <Form handleSelectedPlayer={handleSelectedPlayer}/>
+    <img src="/Magic.png" alt="Magic Johnson" />
   </div>
   )
 }
