@@ -61,6 +61,10 @@ const Stats = ( {stats, noStatsAvail} ) => {
     <td>{pf}</td>
   </tr>
     </table>
+    {noStatsAvail
+        ? <p>No stats available for this player</p>
+        : null
+      }
     </div>
   )
 }

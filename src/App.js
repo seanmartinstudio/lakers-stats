@@ -43,10 +43,6 @@ function App() {
   return (
   <div>
     <Container profile={profile} stats={stats} team={team} noStatsAvail={noStatsAvail}/>
-    {noStatsAvail
-        ? <p>No stats available for this player</p>
-        : null
-      }
     <Form handleSelectedPlayer={handleSelectedPlayer}/>
     <img src="/Magic.png" alt="Magic Johnson" />
   </div>
