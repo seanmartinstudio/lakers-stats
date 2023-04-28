@@ -1,3 +1,3 @@
-# NBA Stats Shuffle
+# [Lakers Stats 🏀](https://lakers-stats.netlify.app/)
 
-### Currently building a web app that will allow a user to randomly shuffle between players and their stats.
+### Simple web app that allows a user to look up the stats for each player on the Los Angeles Lakers during the 2022-2023 regular NBA season.
